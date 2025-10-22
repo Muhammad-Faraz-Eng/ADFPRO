@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dfProfaraz"
+		},
+		"Azure_sql_ls_password": {
+			"value": ""
+		},
+		"Storage_Acc_accountKey": {
+			"value": ""
+		},
+		"Azure_sql_ls_properties_typeProperties_server": {
+			"value": "dfprofaraz.database.windows.net"
+		},
+		"Azure_sql_ls_properties_typeProperties_database": {
+			"value": "dfprodb"
+		},
+		"Azure_sql_ls_properties_typeProperties_userName": {
+			"value": "faraz"
+		},
+		"Storage_Acc_properties_typeProperties_url": {
+			"value": "https://azurestgpro.dfs.core.windows.net/"
+		},
+		"ls_restapi_properties_typeProperties_url": {
+			"value": "https://pokeapi.co/api/v2/pokemon"
+		},
+		"schedule_properties_scheduled_parameters_schema": {
+			"value": "source"
+		},
+		"schedule_properties_scheduled_parameters_table": {
+			"value": "Orders"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
