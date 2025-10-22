@@ -25,7 +25,14 @@
 					}
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				},
+				{
+					"name": "AlterRow1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          booking_id as string,",
@@ -38,11 +45,14 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> ingestion",
-				"ingestion sink(allowSchemaDrift: true,",
+				"ingestion derive(passenger_id = lower(passenger_id)) ~> derivedColumn1",
+				"derivedColumn1 alterRow() ~> AlterRow1",
+				"AlterRow1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'delta',",
 				"     fileSystem: 'sink',",
 				"     folderPath: 'deltaState',",
+				"     overwrite: true,",
 				"     mergeSchema: false,",
 				"     autoCompact: false,",
 				"     optimizedWrite: false,",
